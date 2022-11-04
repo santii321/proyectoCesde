@@ -110,3 +110,16 @@ function transferir() {
 
 
 }
+function volver_atras() {
+    document.querySelector('#loading').style = "display: block;"
+    document.querySelector('#transferir').style = "display: none;"
+    document.querySelector('#saldo').style = "display: none;"
+    document.querySelector('#consignar').style = "display: none;"
+    document.querySelector('#atras').style = "display: none;"
+    document.querySelector('#retirar').style = "display: none;"
+    setTimeout(function () {
+        document.querySelector('#loading').style = "display: none;"
+        document.querySelector('#opciones').style = "display: block;"
+        document.querySelector('#atras').style = "display: block;"
+    }, 1000)
+}
