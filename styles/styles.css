@@ -193,82 +193,107 @@ body {
 }
 
 .movimientos {
-margin-top: 10em;
+  margin-top: 10em;
 }
-.btn{
+
+.btn {
   width: 45%;
   text-transform: capitalize;
   padding: 20px;
 }
 
-.logo{
+.logo {
   width: 20em;
-  
+
 }
+
 .btn-flotante {
-	font-size: 16px; 
-	text-transform: uppercase; 
-	font-weight: bold; 
-	color: #ffffff; 
-	border-radius: 5px; 
-	letter-spacing: 2px; 
-	background-color: #e91e1e; 
-	padding: 18px 30px; 
-	position: fixed;
-	top: 40px;
-	right: 40px;
-	transition: all 300ms ease 0ms;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	z-index: 99;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  border: none;
+  background-color: #e91e1e;
+  padding: 18px 30px;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  transition: all 300ms ease 0ms;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  z-index: 99;
 }
+
 .btn-flotante:hover {
-	background-color: #ca5757; 
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+  background-color: #ca5757;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
   color: #f5f5f5;
-	transform: translateY(-7px);
+  transform: translateY(-7px);
 }
-.btn-naranja{
+
+.btn-naranja {
   background-color: #ff7f41;
   --bs-btn-active-bg: #eb601b;
   --bs-btn-active-color: #fff;
   color: #ffffff;
 
 }
-.btn-naranja:hover{
+
+.btn-naranja:hover {
   background-color: #eb601b;
   color: #ffffff;
 }
-.btn-celeste{
+
+.btn-celeste {
   background: #7a45e5;
   --bs-btn-active-bg: #5e2dc0;
   --bs-btn-active-color: #fff;
   color: #ffffff;
 }
-.btn-celeste:hover{
+
+.btn-celeste:hover {
   background-color: #5e2dc0;
   color: #ffffff;
 }
 
-a{
+a {
   text-decoration: none;
 }
-.icono-retirar{
+
+.icono-retirar {
   background-image: url("../images/2676727.png");
   background-repeat: no-repeat;
   background-size: 5em;
 }
-.icono-saldo{
+
+.icono-saldo {
   background-image: url("../images/5762130.png");
   background-repeat: no-repeat;
   background-size: 5em;
 }
-.icono-transferir{
+
+.icono-transferir {
   background-image: url("../images/3757813.png");
   background-repeat: no-repeat;
   background-size: 5em;
 }
-.icono-consignar{
+
+.icono-consignar {
   background-image: url("../images/5762280.png");
   background-repeat: no-repeat;
   background-size: 5em;
+}
+
+.logo_saldo {
+  width: 10em;
+}
+
+.color_saldo {
+  --bs-alert-color: #1a402e;
+  --bs-alert-bg: #198754;
+  --bs-alert-border-color: #25a167;
+}
+.contenido_tranferencia {
+  max-width: 900px;
 }

@@ -47,14 +47,16 @@
 
   <!-- consultar saldo -->
   <section id="saldo" class="saldo" style="display: none;">
+    <button id="atras" class="btn-flotante">Volver atras</button>
     <div class="container-sm">
+      <img src="./images/il-explore-money.svg" alt="" srcset="" class="logo_saldo">
       <div class="row">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Saldo y movimientos</h5>
             <p class="card-text">saldo disponible</p>
-            <div class="alert alert-success" role="alert">
-              Su cantidad de dinero va aqui
+            <div class="alert color_saldo" role="alert">
+              <h5>su dinero aqui</h5>
             </div>
           </div>
         </div>
@@ -62,29 +64,21 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Banco</th>
+            <th scope="col">Valor</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
           </tr>
           <tr>
-            <th scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
           </tr>
         </tbody>
       </table>
@@ -106,7 +100,26 @@
 
   <!-- tranferir -->
   <section class=" transferir" id="transferir" style="display: none;">
-    <h1>codigoaqui trasferir</h1>
+    <img src="./images/Paso_02_03.png" alt="" class="logo_saldo">
+    <button id="atras" class="btn-flotante">Volver atras</button>
+    <div class="container-sm contenido_tranferencia">
+      <div class="row">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Tranferencias</h5>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="" >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
   <!-- fin trasferir -->
 
