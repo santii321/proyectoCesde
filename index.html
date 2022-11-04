@@ -31,13 +31,13 @@
     <section class="opciones">
       <h5 id="nombre" class="alert alert-secondary"></h5>
       <section id="movimientos" class="movimientos ">
-        <button class="btn btn-success position-absolute  bottom-0 start-0 icono-saldo" onclick="saldo()" type="button">
+        <button class="btn btn_login btn-success position-absolute  bottom-0 start-0 icono-saldo" onclick="saldo()" type="button">
           consultar saldo</button>
-        <button class="btn btn-celeste position-absolute top-50 start-0 translate-middle-y icono-retirar"
+        <button class="btn btn_login btn-celeste position-absolute top-50 start-0 translate-middle-y icono-retirar"
           onclick="retirar()" type="button">retirar dinero</button>
-        <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y icono-transferir"
+        <button class="btn btn_login btn-primary position-absolute top-50 end-0 translate-middle-y icono-transferir"
           onclick="transferir()" type="button">transferir dinero</button>
-        <button class="btn btn-naranja position-absolute bottom-0 end-0 icono-consignar" onclick="consignar()"
+        <button class="btn btn_login btn-naranja position-absolute bottom-0 end-0 icono-consignar" onclick="consignar()"
           type="button">consignar
           saldo</button>
       </section>
@@ -107,17 +107,47 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Tranferencias</h5>
-            <div class="row">
+            <div class="row mb-3">
               <div class="col">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" placeholder="Nombre de quien recibe">
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="" >
+                <input type="text" class="form-control" placeholder="Correo Electronico">
               </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Numero de cuenta">
+              </div>
+              <div class="col">
+                <select class="form-select">
+                  <option selected>Tipo de cuenta</option>
+                  <option value="1">Ahorros</option>
+                  <option value="2">Corriente</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+                <select class="form-select">
+                  <option selected>Banco</option>
+                  <option value="1">Bancolombia</option>
+                  <option value="2">Davivienda</option>
+                  <option value="3">BancoUnion</option>
+                  <option value="4">Banco popular</option>
+                </select>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Monto a transferir">
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button">Transferir Dinero</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
 
   </section>
@@ -139,7 +169,7 @@
           autocomplete="off">
         <label for="floatingPassword">Clave</label>
       </section>
-      <button class="w-100 btn btn-lg btn-primary" target="_parent" id="button" onclick="validar()"
+      <button class="w-100 btn btn_login btn-lg btn-primary" target="_parent" id="button" onclick="validar()"
         type="button">Ingresar</button>
       <p class="mt-5 mb-3 text-muted">&copy; BancoUNION – 2022</p>
     </form>
