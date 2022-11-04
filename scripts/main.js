@@ -6,7 +6,7 @@ const clave = document.querySelector('#floatingPassword')
 
 
 
-const validarUsuario = /[a-zA-Z][a-zA-Z0-9-_]{3,32}/gi
+const validarUsuario = /^([A-Za-z0-9]){4,20}$/gm
 const validarClave = /^-?\d+\.?\d*$/m;
 const validarFormulario = (e) => {
 
@@ -45,7 +45,7 @@ function validar() {
     var clave = document.querySelector('#floatingPassword').value
 
 
-    if (usuario == "BancoUnion" && clave == "1234" || usuario == "admin1" && clave == "1234") {
+    if (usuario == "BancoUnion" && clave == "1234" || usuario == "SantiagoG" && clave == "1234") {
         document.querySelector('#loading').style = "display: block;"
         document.querySelector('form').style = "display: none;"
         document.querySelector('#danger').style = "display: none;"
