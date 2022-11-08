@@ -5,7 +5,6 @@ const nombre = document.querySelector('#nombre')
 const clave = document.querySelector('#floatingPassword')
 
 
-
 const validarUsuario = /^([A-Za-z0-9]){4,20}$/gm
 const validarClave = /^-?\d+\.?\d*$/m;
 const validarFormulario = (e) => {
@@ -96,6 +95,7 @@ function consignar() {
     setTimeout(function () {
         document.querySelector('#loading').style = "display: none;"
         document.querySelector('#consignar').style = "display: block;"
+        
     }, 1500)
 
 
@@ -122,4 +122,22 @@ function volver_atras() {
         document.querySelector('#opciones').style = "display: block;"
         document.querySelector('#atras').style = "display: block;"
     }, 1000)
+}
+
+function enviarConsignacion(){
+    document.querySelector('#loading').style = "display: block;"
+    document.querySelector('#exampleModal').style = "display: none;"
+    document.querySelector('#alertToas').style = "display: block;"
+    document.querySelector('.modal-backdrop').style = "display: none;"        
+    document.querySelector('#consignar').style = "display: none;"
+
+    setTimeout(function () {
+        document.querySelector('#loading').style = "display: none;"
+        document.querySelector('#opciones').style = "display: block;"
+        document.querySelector('#alertToas').style = "display: none;"
+    }, 10000)
+
+}
+function confirmacion(){
+    document.querySelector('.modal-backdrop').style = "display: block;"
 }
