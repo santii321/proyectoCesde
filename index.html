@@ -89,8 +89,77 @@
 
   <!-- retirar saldo -->
   <section class="retirar" id="retirar" style="display: none;">
-    <h1>codigoaqui retirar</h1>
+    <button id="atras " onclick="volver_atras()" class="btn-flotante btn-salir absolute">Volver atras</button>
+    <img src="./images/logoRetiros.svg" alt="" srcset="" class="logo_saldo">
+    <section class="container-sm contenidoRetiros">
+      <section class="row">
+        <section class="card">
+          <section class="card-body">
+            <h5 class="card-title">Retiros</h5>
+            <section class="row mb-3">
+              <section class="row mb-3">
+                <section class="col-sm">
+                  <input type="text" class="form-control" id="montoRetiros" placeholder="Valor a retirar" autocomplete="off">
+                </section>
+              </section>
+              <section class="row mb-3">
+                <section class="col-sm">
+                  <select class="form-select">
+                    <option selected>Tipo de cuenta</option>
+                    <option value="1">Cuenta de Ahorros</option>
+                    <option value="2">Cuenta Corriente</option>>
+                  </select>
+                </section>
+              </section>
+              <section class="boton">
+                <button type="button" id="myBtn" class="btn btn-celeste p-3">
+                  Realizar Retiro
+                </button>
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
   </section>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-contenido">
+      <aside class="exitosa_transacion" id="exitosa_transacion">
+        <img src="./images/Proceso-Exitoso-optimizada.png" class="logo_saldo alt=" ...">
+        <h4>
+          <span class="text-primary text-center">CONSIGNACION EXITOSA</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item justify-content-between lh-sm">
+            <aside>
+              <h6 class="my-0">Comprobante N°</h6>
+              <small class="text-muted">3545646</small>
+            </aside>
+          </li>
+          <li class="list-group-item  justify-content-between lh-sm">
+            <aside>
+              <h6 class="my-0">Tipo de cuenta</h6>
+              <small class="text-muted">aqui tipo de cuenta</small>
+            </aside>
+          </li>
+          <li class="list-group-item  justify-content-between lh-sm">
+            <aside>
+              <h6 class="my-0">Valor enviado</h6>
+              <small class="text-muted">aqui va el valor</small>
+            </aside>
+          </li>
+          <li class="list-group-item justify-content-between bg-light">
+            <aside class="text-success">
+              <h6 class="my-0">Fecha Transacción</h6>
+              <small>aqui fecha</small>
+            </aside>
+          </li>
+        </ul>
+        <button id="atras" onclick="volver_atras()" class="btn-flotante btn-salir">Volver atras</button>
+      </aside>
+    </div>
+  </div>
   <!-- fin retirar -->
 
   <!-- consignar  -->
@@ -135,7 +204,8 @@
               </aside>
               <!-- Button trigger modal -->
               <aside class="boton">
-                <button type="button" onclick="confirmacion()" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" onclick="confirmacion()" class="btn btn-primary p-3" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">
                   Realizar consignación
                 </button>
               </aside>
@@ -166,22 +236,55 @@
     </aside>
 
   </section>
-  <!-- fin consignar -->
-  <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
-
-    <!-- Then put toasts within -->
-    <div class="alertToas" id="alertToas" style="display: none;">
-      <div class="toast-header">
+  <!-- Transacción -->
+  <aside aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+    <aside class="alertToas" id="alertToas" style="display: none;">
+      <aside class="toast-header">
         <img src="./images/bancolombia-collect.png" class="rounded me-2" alt="...">
         <strong class="me-auto">BancoUNION</strong>
         <small>Faltan 4 segundos</small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
+      </aside>
+      <aside class="toast-body">
         En estos momentos estamos haciendo tu consignación por favor espera un momento
-      </div>
-    </div>
-  </div>
+      </aside>
+    </aside>
+    <aside class="contenido_exitoso" id="exitosa" style="display: none;">
+      <img src="./images/Proceso-Exitoso-optimizada.png" class="logo_saldo alt=" ...">
+      <h4>
+        <span class="text-primary text-center">CONSIGNACION EXITOSA</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item justify-content-between lh-sm">
+          <aside>
+            <h6 class="my-0">Comprobante N°</h6>
+            <small class="text-muted">3545646</small>
+          </aside>
+        </li>
+        <li class="list-group-item  justify-content-between lh-sm">
+          <aside>
+            <h6 class="my-0">Producto de origen</h6>
+            <small class="text-muted">aqui numero de cuenta</small>
+          </aside>
+        </li>
+        <li class="list-group-item  justify-content-between lh-sm">
+          <aside>
+            <h6 class="my-0">Valor enviado</h6>
+            <small class="text-muted">aqui va el valor</small>
+          </aside>
+        </li>
+        <li class="list-group-item justify-content-between bg-light">
+          <aside class="text-success">
+            <h6 class="my-0">Fecha Transacción</h6>
+            <small>aqui fecha</small>
+          </aside>
+        </li>
+      </ul>
+      <button id="atras" onclick="volver_atras()" class="btn-flotante btn-salir">Volver atras</button>
+    </aside>
+  </aside>
+
+  <!-- fin consignar -->
   <!-- tranferir -->
   <section class=" transferir" id="transferir" style="display: none;">
     <img src="./images/Paso_02_03.png" alt="" class="logo_saldo">

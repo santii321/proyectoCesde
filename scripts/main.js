@@ -95,7 +95,7 @@ function consignar() {
     setTimeout(function () {
         document.querySelector('#loading').style = "display: none;"
         document.querySelector('#consignar').style = "display: block;"
-        
+
     }, 1500)
 
 
@@ -117,6 +117,9 @@ function volver_atras() {
     document.querySelector('#consignar').style = "display: none;"
     document.querySelector('#atras').style = "display: none;"
     document.querySelector('#retirar').style = "display: none;"
+    document.querySelector('#exitosa').style = "display: none;"
+    modal.style.display = "none";
+
     setTimeout(function () {
         document.querySelector('#loading').style = "display: none;"
         document.querySelector('#opciones').style = "display: block;"
@@ -124,20 +127,33 @@ function volver_atras() {
     }, 1000)
 }
 
-function enviarConsignacion(){
+function enviarConsignacion() {
     document.querySelector('#loading').style = "display: block;"
     document.querySelector('#exampleModal').style = "display: none;"
     document.querySelector('#alertToas').style = "display: block;"
-    document.querySelector('.modal-backdrop').style = "display: none;"        
+    document.querySelector('.modal-backdrop').style = "display: none;"
     document.querySelector('#consignar').style = "display: none;"
 
     setTimeout(function () {
         document.querySelector('#loading').style = "display: none;"
-        document.querySelector('#opciones').style = "display: block;"
+        document.querySelector('#exitosa').style = "display: block;"
         document.querySelector('#alertToas').style = "display: none;"
-    }, 10000)
+        document.querySelector('#atras').style = "display: block;"
+    }, 7000)
 
 }
-function confirmacion(){
+function confirmacion() {
     document.querySelector('.modal-backdrop').style = "display: block;"
+}
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+
+btn.onclick = function () {
+    document.querySelector('#loading').style = "display: block;"
+    document.querySelector('#retirar').style = "display: none"
+
+    setTimeout(function () {
+        document.querySelector('#loading').style = "display: none;"
+        modal.style.display = "block";
+    }, 2000)
 }
