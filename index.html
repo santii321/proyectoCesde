@@ -57,33 +57,14 @@
             <h5 class="card-title">Saldo y movimientos</h5>
             <p class="card-text">saldo disponible</p>
             <aside class="alert color_saldo" role="alert">
-              <h5>su dinero aqui</h5>
+              <h5 id="tuSaldo">su dinero aqui</h5>
             </aside>
           </aside>
+          <table class="table ">
+
+          </table>
         </aside>
       </aside>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Fecha</th>
-            <th scope="col">Banco</th>
-            <th scope="col">Valor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-        </tbody>
-      </table>
-
   </section>
   <!-- fin consultar -->
 
@@ -100,22 +81,23 @@
               <section class="row mb-3">
                 <section class="col-sm">
                   <input type="text" class="form-control" id="montoRetiros" placeholder="Valor a retirar"
-                    autocomplete="off">
+                    autocomplete="off" value="" name="montoRetiros">
+                  <span id="errorValor" class="alert alert-danger mt-2" style="display: none;"></span>
                 </section>
               </section>
               <section class="row mb-3">
                 <section class="col-sm">
-                  <select class="form-select">
-                    <option selected>Tipo de cuenta</option>
+                  <select class="form-select" id="opcionesCuenta" name="opcionesCuenta">
                     <option value="1">Cuenta de Ahorros</option>
                     <option value="2">Cuenta Corriente</option>>
                   </select>
                 </section>
               </section>
               <section class="boton">
-                <button type="button" id="myBtn" class="btn btn-celeste p-3">
+                <button type="button" id="myBtn" class="btn btn-celeste p-3" disabled>
                   Realizar Retiro
                 </button>
+
               </section>
             </section>
           </section>
@@ -141,19 +123,19 @@
           <li class="list-group-item  justify-content-between lh-sm">
             <aside>
               <h6 class="my-0">Tipo de cuenta</h6>
-              <small class="text-muted">aqui tipo de cuenta</small>
+              <small class="text-muted" id="tipoCuent">aqui tipo de cuenta</small>
             </aside>
           </li>
           <li class="list-group-item  justify-content-between lh-sm">
             <aside>
               <h6 class="my-0">Valor enviado</h6>
-              <small class="text-muted">aqui va el valor</small>
+              <small class="text-muted" id="valorEnviado"></small>
             </aside>
           </li>
           <li class="list-group-item justify-content-between bg-light">
             <aside class="text-success">
               <h6 class="my-0">Fecha Transacción</h6>
-              <small>aqui fecha</small>
+              <small id="fechaRetiro">aqui fecha</small>
             </aside>
           </li>
         </ul>
@@ -170,13 +152,13 @@
     <aside class="container-sm contenido_tranferencia">
       <aside class="row">
         <aside class="card">
-          <aside class="card-body">
+          <aside class="card-body" id="formConsignacion">
             <h5 class="card-title">CONSIGNAR DINERO</h5>
             <aside class="row mb-3">
               <aside class="row mb-3">
                 <label for="inputEmail3" class="col-sm-3 col-form-label">Numero de cuenta</label>
                 <aside class="col-sm-8">
-                  <input type="text" class="form-control" id="numeroCuenta">
+                  <input type="text" class="form-control" id="numeroCuenta" name="numeroCuenta">
                 </aside>
               </aside>
               <aside class="row mb-3">
@@ -200,13 +182,13 @@
               <aside class="row mb-3">
                 <label for="inputEmail3" class="col-sm-3 col-form-label">Valor a consignar $</label>
                 <aside class="col-sm-8">
-                  <input type="text" class="form-control" id="consignar">
+                  <input type="text" class="form-control" id="consignare" name="consignare" value="">
                 </aside>
               </aside>
               <!-- Button trigger modal -->
               <aside class="boton">
-                <button type="button" onclick="confirmacion()" class="btn btn-primary p-3" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
+                <button type="button" onclick="confirmacion()" id="botonConsignar" class="btn btn-primary p-3" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal" disabled>
                   Realizar consignación
                 </button>
               </aside>
@@ -224,7 +206,7 @@
                     </aside>
                     <aside class="modal-footer">
                       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                      <button type="button" onclick="enviarConsignacion()" class="btn btn-primary">Enviar
+                      <button type="button" id="botonConsignacion" onclick="enviarConsignacion()" class="btn btn-primary">Enviar
                         consignacion</button>
                     </aside>
                   </aside>
@@ -293,19 +275,24 @@
     <aside class="container-sm contenido_tranferencia">
       <aside class="row">
         <aside class="card">
-          <aside class="card-body">
+          <aside class="card-body" id="formTransferencias">
             <h5 class="card-title">Tranferencias</h5>
+            
+            <span id="errorTransferir" class="alert alert-danger mt-2" style="display: none;"></span>
             <aside class="row mb-3">
               <aside class="col">
-                <input type="text" class="form-control" placeholder="Nombre de quien recibe">
+                <input type="text" id="nombreTranferir" name="nombreTranferir" class="form-control"
+                  placeholder="Nombre de quien recibe" autocomplete="off">
               </aside>
               <aside class="col">
-                <input type="text" class="form-control" placeholder="Correo Electronico">
+                <input type="text" id="email" name="email" class="form-control" placeholder="Correo Electronico"
+                  autocomplete="off">
               </aside>
             </aside>
             <aside class="row mb-3">
               <aside class="col">
-                <input type="text" class="form-control" placeholder="Numero de cuenta">
+                <input type="text" id="numeroTransferir" name="numeroTransferir" class="form-control"
+                  placeholder="Numero de cuenta" autocomplete="off">
               </aside>
               <aside class="col">
                 <select class="form-select">
@@ -326,19 +313,56 @@
                 </select>
               </aside>
               <aside class="col">
-                <input type="text" class="form-control" placeholder="Monto a transferir">
+                <input type="text" id="montoTranferir" name="montoTranferir" class="form-control"
+                  placeholder="Monto a transferir" autocomplete="off">
               </aside>
             </aside>
             <aside class="d-grid gap-2">
-              <button class="btn btn-primary" type="button">Transferir Dinero</button>
+              <button class="btn btn-primary"  type="button" id="botonGuardar" name="botonGuardar" disabled>Transferir
+                Dinero</button>
             </aside>
           </aside>
         </aside>
       </aside>
     </aside>
     </aside>
-
   </section>
+  <!-- exitosa la tranferencia  -->
+  <aside aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+    <aside class="contenido_exitoso" id="exitosaTranferir" style="display: none;">
+      <img src="./images/Proceso-Exitoso-optimizada.png" class="logo_saldo alt=" ...">
+      <h4>
+        <span class="text-primary text-center">Tranferencia Exitosa</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item justify-content-between lh-sm">
+          <aside>
+            <h6 class="my-0">Comprobante N°</h6>
+            <small class="text-muted">3545646</small>
+          </aside>
+        </li>
+        <li class="list-group-item  justify-content-between lh-sm">
+          <aside>
+            <h6 class="my-0">Producto de origen</h6>
+            <small class="text-muted">aqui numero de cuenta</small>
+          </aside>
+        </li>
+        <li class="list-group-item  justify-content-between lh-sm">
+          <aside>
+            <h6 class="my-0">Valor enviado</h6>
+            <small class="text-muted">aqui va el valor</small>
+          </aside>
+        </li>
+        <li class="list-group-item justify-content-between bg-light">
+          <aside class="text-success">
+            <h6 class="my-0">Fecha Transacción</h6>
+            <small>aqui fecha</small>
+          </aside>
+        </li>
+      </ul>
+      <button id="atras" onclick="volver_atras()" class="btn-flotante btn-salir">Volver atras</button>
+    </aside>
+  </aside>
   <!-- fin trasferir -->
 
   <main class="form-signin w-100 m-auto">

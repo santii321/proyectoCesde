@@ -394,3 +394,7 @@ img.rounded.me-2 {
   }
 
 }
+thead{
+  border-bottom: solid #dee2e6;
+  border-width: thin;
+}
