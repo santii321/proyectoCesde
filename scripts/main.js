@@ -162,7 +162,7 @@ function validar() {
             document.querySelector('#loading').style = "display: none;"
             document.querySelector('#opciones').style = "display: block"
             nombre.textContent = "Bienvenido  " + usuario
-        }, 4000)
+        }, 3000)
 
         return false
     } else {
@@ -188,7 +188,7 @@ function saldo() {
     setTimeout(function () {
         document.querySelector('#loading').style = "display: none;"
         document.querySelector('#saldo').style = "display: block;"
-    }, 1500)
+    }, 1000)
 
     const tuSaldo = document.querySelector('#tuSaldo')
     tuSaldo.innerText = saldos
@@ -201,7 +201,7 @@ function retirar() {
     setTimeout(function () {
         document.querySelector('#loading').style = "display: none;"
         document.querySelector('#retirar').style = "display: block;"
-    }, 1500)
+    }, 1000)
 }
 
 /* CODIGO CONSIGNAR */
@@ -212,7 +212,7 @@ function consignar() {
         document.querySelector('#loading').style = "display: none;"
         document.querySelector('#consignar').style = "display: block;"
 
-    }, 1500)
+    }, 1000)
 }
 
 /*  CODIGO TRANSFERIR */
@@ -222,7 +222,7 @@ function transferir() {
     setTimeout(function () {
         document.querySelector('#loading').style = "display: none;"
         document.querySelector('#transferir').style = "display: block;"
-    }, 1500)
+    }, 1000)
 
 
 }
@@ -266,7 +266,7 @@ function enviarConsignacion() {
         document.querySelector('#exitosa').style = "display: block;"
         document.querySelector('#alertToas').style = "display: none;"
         document.querySelector('#atras').style = "display: block;"
-    }, 7000)
+    }, 2000)
     document.querySelector('#numeroCuentaConsignar').textContent = document.querySelector('#numeroCuenta').value
     document.querySelector('#valorConsignado').textContent = document.querySelector('#consignare').value
     document.querySelector('#tipoCuentaConsignar').textContent = document.querySelector('#tipoConsignar').value
@@ -406,7 +406,7 @@ botonGuardar.addEventListener('click', (e) => {
                 document.querySelector('#exitosaTranferir').style = "display: block"
 
 
-            }, 1500)
+            }, 1000)
             document.querySelector('#numeroCuentaTrans').textContent = document.querySelector('#numeroTransferir').value
             document.querySelector('#valorTransferido').textContent = document.querySelector('#montoTranferir').value
             document.querySelector('#fechaTransferencia').textContent = new Date().toLocaleString();
