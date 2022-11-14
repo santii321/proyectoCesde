@@ -13,7 +13,7 @@ let saldos = 100000
 /* Comienzan las validaciones de ingreso de carateres validos en cada campo */
 const validarUsuario = /^([A-Za-z0-9]){4,20}$/gm
 const validarClave = /^-?\d+\.?\d*$/m;
-const ValidarCuenta = /^\d{5,15}$/  
+const ValidarCuenta = /^\d{5,15}$/
 
 const validarNumeros = /^-?\d+\.?\d*$/m;
 const validarCorreo = /^[a-zA-Z0-9.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/
@@ -315,7 +315,7 @@ btn.onclick = function () {
         document.querySelector('#errorValor').style = "display:block"
 
     }
-   
+
 }
 
 /* CODIGO TABLE LIST RETIRO */
@@ -404,7 +404,7 @@ botonGuardar.addEventListener('click', (e) => {
             setTimeout(function () {
                 document.querySelector('#loading').style = "display:none"
                 document.querySelector('#exitosaTranferir').style = "display: block"
-               
+
 
             }, 1500)
             document.querySelector('#numeroCuentaTrans').textContent = document.querySelector('#numeroTransferir').value
@@ -412,8 +412,8 @@ botonGuardar.addEventListener('click', (e) => {
             document.querySelector('#fechaTransferencia').textContent = new Date().toLocaleString();
             document.querySelector('#bancoText').textContent = document.querySelector('#tipBancos').value
             document.querySelector('#tipoCuentaText').textContent = document.querySelector('#tipCuenta').value
-            
-           
+
+
             e.preventDefault()
             function MovimientosTranferencia(nombreTranferir, email, numeroTransferir, montoTranferir) {
                 this.nombreTranferir = nombreTranferir
@@ -478,21 +478,21 @@ const agregarTranferencia = () => {
     listadoTranferencia.push(nuevaTranferencia)
 
 }
-function limpiarInput(){
+function limpiarInput() {
 
-   let inputs = document.querySelectorAll('input')
-   inputs.forEach((input) =>{
+    let inputs = document.querySelectorAll('input')
+    inputs.forEach((input) => {
 
-    input.value = ""
-    montoRetiros.classList.remove('is-valid')
-    numeroCuenta.classList.remove('is-valid')
-    consignare.classList.remove('is-valid')
-    nombreTranferir.classList.remove('is-valid')
-    email.classList.remove('is-valid')
-    numeroTransferir.classList.remove('is-valid')
-    montoTranferir.classList.remove('is-valid')
+        input.value = ""
+        montoRetiros.classList.remove('is-valid')
+        numeroCuenta.classList.remove('is-valid')
+        consignare.classList.remove('is-valid')
+        nombreTranferir.classList.remove('is-valid')
+        email.classList.remove('is-valid')
+        numeroTransferir.classList.remove('is-valid')
+        montoTranferir.classList.remove('is-valid')
 
-   })
+    })
 }
 /* CODIGO TABLE LIST CONSIGNACION */
 const nuevatable = document.querySelector('table')
@@ -500,46 +500,46 @@ const botonConsignacion = document.querySelector('#botonConsignacion')
 const consignacionNueva = document.querySelector('#consignare')
 let nuevoConsigancion
 botonConsignacion.addEventListener('click', (e) => {
-        e.preventDefault()
+    e.preventDefault()
 
 
-        function MovimientosConsignacion(consignacionNueva) {
-            this.consignacionNueva = consignacionNueva
+    function MovimientosConsignacion(consignacionNueva) {
+        this.consignacionNueva = consignacionNueva
 
-        }
-        const consignacionNueva = document.querySelector('#consignare').value
-        const tipoConsignacion = "Consignacion Cajero"
+    }
+    const consignacionNueva = document.querySelector('#consignare').value
+    const tipoConsignacion = "Consignacion Cajero"
 
-        nuevoConsigancion = new MovimientosConsignacion(consignacionNueva, tipoConsignacion)
-        agregarConsignacion();
-        console.log(nuevoConsigancion)
+    nuevoConsigancion = new MovimientosConsignacion(consignacionNueva, tipoConsignacion)
+    agregarConsignacion();
+    console.log(nuevoConsigancion)
 
-        const td = document.createElement('td')
-        const td1 = document.createElement('td')
-        const td5 = document.createElement('td')
-        const td3 = document.createElement('td')
-        const td4 = document.createElement('td')
-        td1.style = "color: green; font-weight: 700;"
-        const td2 = document.createElement('td')
-        const thead = document.createElement('thead')
-        const tbody = document.createElement('tbody')
-        const tr = document.createElement('tr')
-
-
-        td.innerText = new Date().toLocaleString();
-        td1.innerText = "$ +" + consignacionNueva
-        td2.innerText = tipoConsignacion
-        td3.innerText = ""
-        td4.innerText = ""
-        td5.innerText = ""
+    const td = document.createElement('td')
+    const td1 = document.createElement('td')
+    const td5 = document.createElement('td')
+    const td3 = document.createElement('td')
+    const td4 = document.createElement('td')
+    td1.style = "color: green; font-weight: 700;"
+    const td2 = document.createElement('td')
+    const thead = document.createElement('thead')
+    const tbody = document.createElement('tbody')
+    const tr = document.createElement('tr')
 
 
-        tr.append(td, td1, td2)
-        thead.append(tr)
-        table.append(thead, tbody)
-        
-        limpiarInput()
-   
+    td.innerText = new Date().toLocaleString();
+    td1.innerText = "$ +" + consignacionNueva
+    td2.innerText = tipoConsignacion
+    td3.innerText = ""
+    td4.innerText = ""
+    td5.innerText = ""
+
+
+    tr.append(td, td1, td2)
+    thead.append(tr)
+    table.append(thead, tbody)
+
+    limpiarInput()
+
 })
 
 let listadoConsignacion = []
@@ -551,25 +551,23 @@ const agregarConsignacion = () => {
 
 
 JavaScript
-function alerta()
-    {
+function alerta() {
     var mensaje;
     var opcion = confirm("Clicka en Aceptar o Cancelar");
     if (opcion == true) {
         mensaje = "Has clickado OK";
-	} else {
-	    mensaje = "Has clickado Cancelar";
-	}
-	document.getElementById("ejemplo").innerHTML = mensaje;
+    } else {
+        mensaje = "Has clickado Cancelar";
+    }
+    document.getElementById("ejemplo").innerHTML = mensaje;
 }
-function alerta()
-    {
+function alerta() {
     var mensaje;
     var opcion = confirm("¿ Estas seguro que quieres Cerrar Sesión ?");
     if (opcion == true) {
-        location. reload()
-	} else {
-	    console.log("No cerraste sesion")
-	}
-	
+        location.reload()
+    } else {
+        console.log("No cerraste sesion")
+    }
+
 }
