@@ -25,7 +25,7 @@
   <!-- Fin cargando pagina -->
   <!-- pagina principal -->
   <section id="opciones" style="display: none;">
-    <a href="index.html" class="btn-flotante">Cerrar sesión</a>
+    <button onclick="alerta()" class="btn-flotante">Cerrar sesión</button>
     <img src="./images/il-pre-approved-credit-online.svg" alt="" srcset="" class="logo">
     <img src="./images/bancounionnew.png" alt="" srcset="" class="logo">
     <section class="opciones">
@@ -45,6 +45,7 @@
     </section>
   </section>
   <!-- fin pagina principal -->
+
 
   <!-- consultar saldo -->
   <section id="saldo" class="saldo" style="display: none;">
@@ -111,7 +112,7 @@
       <aside class="exitosa_transacion" id="exitosa_transacion">
         <img src="./images/Proceso-Exitoso-optimizada.png" class="logo_saldo alt=" ...">
         <h4>
-          <span class="text-primary text-center">CONSIGNACION EXITOSA</span>
+          <span class="text-primary text-center">RETIRO EXITOSO</span>
         </h4>
         <ul class="list-group mb-3">
           <li class="list-group-item justify-content-between lh-sm">
@@ -164,18 +165,18 @@
               <aside class="row mb-3">
                 <label for="inputEmail3" class="col-sm-3 col-form-label">Seleccione tipo de cuenta</label>
                 <aside class="col-sm-8">
-                  <select class="form-select">
-                    <option value="1">Ahorros</option>
-                    <option value="2">Corriente</option>
+                  <select class="form-select" id="tipoConsignar">
+                    <option value="Ahorros">Ahorros</option>
+                    <option value="Corriente">Corriente</option>
                   </select>
                 </aside>
               </aside>
               <aside class="row mb-3">
                 <label for="inputEmail3" class="col-sm-3 col-form-label">Seleccione Forma de pago</label>
                 <aside class="col-sm-8">
-                  <select class="form-select">
-                    <option value="1">Efectivo</option>
-                    <option value="2">Cheque</option>
+                  <select class="form-select" id="formaDePago">
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Cheque">Cheque</option>
                   </select>
                 </aside>
               </aside>
@@ -187,8 +188,8 @@
               </aside>
               <!-- Button trigger modal -->
               <aside class="boton">
-                <button type="button" onclick="confirmacion()" id="botonConsignar" class="btn btn-primary p-3" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal" disabled>
+                <button type="button" onclick="confirmacion()" id="botonConsignar" class="btn btn-primary p-3"
+                  data-bs-toggle="modal" data-bs-target="#exampleModal" disabled>
                   Realizar consignación
                 </button>
               </aside>
@@ -206,7 +207,8 @@
                     </aside>
                     <aside class="modal-footer">
                       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                      <button type="button" id="botonConsignacion" onclick="enviarConsignacion()" class="btn btn-primary">Enviar
+                      <button type="button" id="botonConsignacion" onclick="enviarConsignacion()"
+                        class="btn btn-primary">Enviar
                         consignacion</button>
                     </aside>
                   </aside>
@@ -247,19 +249,31 @@
         <li class="list-group-item  justify-content-between lh-sm">
           <aside>
             <h6 class="my-0">Producto de origen</h6>
-            <small class="text-muted">aqui numero de cuenta</small>
+            <small class="text-muted" id="numeroCuentaConsignar">aqui numero de cuenta</small>
+          </aside>
+        </li>
+        <li class="list-group-item  justify-content-between lh-sm">
+          <aside>
+            <h6 class="my-0">Tipo de cuenta</h6>
+            <small class="text-muted" id="tipoCuentaConsignar">aqui va el valor</small>
+          </aside>
+        </li>
+        <li class="list-group-item justify-content-between bg-light">
+          <aside class="text-success">
+            <h6 class="my-0">Forma de Pago</h6>
+            <small id="formaPago">aqui fecha</small>
           </aside>
         </li>
         <li class="list-group-item  justify-content-between lh-sm">
           <aside>
             <h6 class="my-0">Valor enviado</h6>
-            <small class="text-muted">aqui va el valor</small>
+            <small class="text-muted" id="valorConsignado">aqui va el valor</small>
           </aside>
         </li>
         <li class="list-group-item justify-content-between bg-light">
           <aside class="text-success">
             <h6 class="my-0">Fecha Transacción</h6>
-            <small>aqui fecha</small>
+            <small id="fechaConsignada">aqui fecha</small>
           </aside>
         </li>
       </ul>
@@ -277,7 +291,7 @@
         <aside class="card">
           <aside class="card-body" id="formTransferencias">
             <h5 class="card-title">Tranferencias</h5>
-            
+
             <span id="errorTransferir" class="alert alert-danger mt-2" style="display: none;"></span>
             <aside class="row mb-3">
               <aside class="col">
@@ -295,21 +309,21 @@
                   placeholder="Numero de cuenta" autocomplete="off">
               </aside>
               <aside class="col">
-                <select class="form-select">
+                <select class="form-select" id="tipCuenta"> 
                   <option selected>Tipo de cuenta</option>
-                  <option value="1">Ahorros</option>
-                  <option value="2">Corriente</option>
+                  <option value="Ahorros">Ahorros</option>
+                  <option value="Corriente">Corriente</option>
                 </select>
               </aside>
             </aside>
             <aside class="row mb-3">
               <aside class="col">
-                <select class="form-select">
+                <select class="form-select" id="tipBancos">
                   <option selected>Banco</option>
-                  <option value="1">Bancolombia</option>
-                  <option value="2">Davivienda</option>
-                  <option value="3">BancoUnion</option>
-                  <option value="4">Banco popular</option>
+                  <option value="Bancolombia">Bancolombia</option>
+                  <option value="Davivienda">Davivienda</option>
+                  <option value="BancoUNION">BancoUnion</option>
+                  <option value="Banco popular">Banco popular</option>
                 </select>
               </aside>
               <aside class="col">
@@ -318,7 +332,7 @@
               </aside>
             </aside>
             <aside class="d-grid gap-2">
-              <button class="btn btn-primary"  type="button" id="botonGuardar" name="botonGuardar" disabled>Transferir
+              <button class="btn btn-primary" type="button" id="botonGuardar" name="botonGuardar" disabled>Transferir
                 Dinero</button>
             </aside>
           </aside>
@@ -344,19 +358,31 @@
         <li class="list-group-item  justify-content-between lh-sm">
           <aside>
             <h6 class="my-0">Producto de origen</h6>
-            <small class="text-muted">aqui numero de cuenta</small>
+            <small class="text-muted" id="numeroCuentaTrans">aqui numero de cuenta</small>
+          </aside>
+        </li>
+        <li class="list-group-item  justify-content-between lh-sm">
+          <aside>
+            <h6 class="my-0">Banco</h6>
+            <small class="text-muted" id="bancoText">aqui va el banco</small>
+          </aside>
+        </li>
+        <li class="list-group-item  justify-content-between lh-sm">
+          <aside>
+            <h6 class="my-0">Tipo de cuenta</h6>
+            <small class="text-muted" id="tipoCuentaText">aqui va tipo de cuenta</small>
           </aside>
         </li>
         <li class="list-group-item  justify-content-between lh-sm">
           <aside>
             <h6 class="my-0">Valor enviado</h6>
-            <small class="text-muted">aqui va el valor</small>
+            <small class="text-muted" id="valorTransferido">aqui va el valor</small>
           </aside>
         </li>
         <li class="list-group-item justify-content-between bg-light">
           <aside class="text-success">
             <h6 class="my-0">Fecha Transacción</h6>
-            <small>aqui fecha</small>
+            <small id="fechaTransferencia">aqui fecha</small>
           </aside>
         </li>
       </ul>

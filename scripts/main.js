@@ -13,9 +13,9 @@ let saldos = 100000
 /* Comienzan las validaciones de ingreso de carateres validos en cada campo */
 const validarUsuario = /^([A-Za-z0-9]){4,20}$/gm
 const validarClave = /^-?\d+\.?\d*$/m;
-const ValidarCuenta = /^-?\d+\.?\d*$/m;
+const ValidarCuenta = /^\d{5,15}$/  
 
-const validarNumeros = /^\d{5,15}$/
+const validarNumeros = /^-?\d+\.?\d*$/m;
 const validarCorreo = /^[a-zA-Z0-9.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/
 const validarNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/
 const validarDinero = /^$[0-9]{1,3}([\\.][0-9]{3})/
@@ -125,7 +125,7 @@ const validarFormulario = (e) => {
             }
             break;
         case "consignare":
-            if (validarNumeros.test(e.target.value)) {
+            if (ValidarCuenta.test(e.target.value)) {
                 consignare.classList.add('is-valid');
                 consignare.classList.remove('is-invalid');
                 document.querySelector('#botonConsignar').disabled = false;
@@ -267,6 +267,11 @@ function enviarConsignacion() {
         document.querySelector('#alertToas').style = "display: none;"
         document.querySelector('#atras').style = "display: block;"
     }, 7000)
+    document.querySelector('#numeroCuentaConsignar').textContent = document.querySelector('#numeroCuenta').value
+    document.querySelector('#valorConsignado').textContent = document.querySelector('#consignare').value
+    document.querySelector('#tipoCuentaConsignar').textContent = document.querySelector('#tipoConsignar').value
+    document.querySelector('#formaPago').textContent = document.querySelector('#formaDePago').value
+    document.querySelector('#fechaConsignada').textContent = new Date().toLocaleString();
 
 }
 
@@ -402,7 +407,13 @@ botonGuardar.addEventListener('click', (e) => {
                
 
             }, 1500)
-
+            document.querySelector('#numeroCuentaTrans').textContent = document.querySelector('#numeroTransferir').value
+            document.querySelector('#valorTransferido').textContent = document.querySelector('#montoTranferir').value
+            document.querySelector('#fechaTransferencia').textContent = new Date().toLocaleString();
+            document.querySelector('#bancoText').textContent = document.querySelector('#tipBancos').value
+            document.querySelector('#tipoCuentaText').textContent = document.querySelector('#tipCuenta').value
+            
+           
             e.preventDefault()
             function MovimientosTranferencia(nombreTranferir, email, numeroTransferir, montoTranferir) {
                 this.nombreTranferir = nombreTranferir
@@ -539,3 +550,26 @@ const agregarConsignacion = () => {
 }
 
 
+JavaScript
+function alerta()
+    {
+    var mensaje;
+    var opcion = confirm("Clicka en Aceptar o Cancelar");
+    if (opcion == true) {
+        mensaje = "Has clickado OK";
+	} else {
+	    mensaje = "Has clickado Cancelar";
+	}
+	document.getElementById("ejemplo").innerHTML = mensaje;
+}
+function alerta()
+    {
+    var mensaje;
+    var opcion = confirm("¿ Estas seguro que quieres Cerrar Sesión ?");
+    if (opcion == true) {
+        location. reload()
+	} else {
+	    console.log("No cerraste sesion")
+	}
+	
+}
